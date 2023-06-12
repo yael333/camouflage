@@ -18,6 +18,7 @@ pub use self::binary::MachDetector;
 pub use self::archive::ZipDetector;
 pub use self::archive::PdfDetector;
 pub use self::code::JsDetector;
+pub use self::video::MovDetector;
 
 
 
@@ -39,6 +40,7 @@ pub fn get_available_detectors() -> Vec<(Box<dyn Detector + 'static>, &'static s
         (Box::new(ZipDetector), "ZIP"),
         (Box::new(PdfDetector), "PDF"),
         (Box::new(JsDetector), "JS"),
+        (Box::new(MovDetector), "MOV"),
 
     ]
 }
