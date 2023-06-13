@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 structopt = "0.3.26"
 prettytable-rs = "0.10.0"
-infer = { version = "0.3", default-features = false }
+infer = { version = "0.13.0", default-features = false }
 memchr = "2.5.0"

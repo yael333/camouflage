@@ -1,0 +1,25 @@
+mod aac_detector;
+mod aiff_detector;
+mod amr_detector;
+mod ape_detector;
+mod dsf_detector;
+mod flac_detector;
+mod m4a_detector;
+mod midi_detector;
+mod mp3_detector;
+mod ogg_detector;
+mod ogg_opus_detector;
+mod wav_detector;
+
+pub use self::aac_detector::AacDetector;
+pub use self::aiff_detector::AiffDetector;
+pub use self::amr_detector::AmrDetector;
+pub use self::ape_detector::ApeDetector;
+pub use self::dsf_detector::DsfDetector;
+pub use self::flac_detector::FlacDetector;
+pub use self::m4a_detector::M4aDetector;
+pub use self::midi_detector::MidiDetector;
+pub use self::mp3_detector::Mp3Detector;
+pub use self::ogg_detector::OggDetector;
+pub use self::ogg_opus_detector::Ogg_opusDetector;
+pub use self::wav_detector::WavDetector;

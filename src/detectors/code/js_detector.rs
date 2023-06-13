@@ -3,7 +3,6 @@ use std::process::Command;
 use std::io::Write;
 use std::fs::File;
 use crate::detectors::Detector;
-use std::ascii::escape_default;
 
 pub struct JsDetector;
 
