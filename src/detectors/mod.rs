@@ -78,7 +78,7 @@ pub fn get_available_detectors() -> Vec<(Box<dyn Detector + 'static>, &'static s
         (Box::new(DerDetector), "DER"),
         (Box::new(DexDetector), "DEX"),
         (Box::new(DeyDetector), "DEY"),
-        (Box::new(DllDetector), "DLL"),
+        // (Box::new(DllDetector), "DLL"), // Same as EXE
         (Box::new(ElfDetector), "ELF"),
         (Box::new(ExeDetector), "EXE"),
         (Box::new(JavaDetector), "JAVA"),
