@@ -32,7 +32,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     table.add_row(row!["Format", "Is Valid"]);
 
     for (detector, format) in detectors {
-        let is_format = detector.detect(&data)?;
+        let is_format = detector.detect(&data, &opt.file_path)?;
         if opt.all || is_format {
             table.add_row(Row::new(vec![
                 Cell::new(format),

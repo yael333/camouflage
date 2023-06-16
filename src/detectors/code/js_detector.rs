@@ -8,7 +8,7 @@ pub struct JsDetector;
 
 // TODO node dependency check?
 impl Detector for JsDetector {
-    fn detect(&self, data: &[u8]) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
         let temp_file_path = "/tmp/temp.js"; // TODO windows support? 
         let mut temp_file = File::create(temp_file_path)?;
         temp_file.write_all(data)?;

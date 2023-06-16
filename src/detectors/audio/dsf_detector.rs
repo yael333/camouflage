@@ -5,7 +5,7 @@ use infer;
 pub struct DsfDetector;
 
 impl Detector for DsfDetector {
-    fn detect(&self, data: &[u8]) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::audio::is_dsf(data))
     }
 }

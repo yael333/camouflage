@@ -5,7 +5,7 @@ use infer;
 pub struct JxrDetector;
 
 impl Detector for JxrDetector {
-    fn detect(&self, data: &[u8]) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::image::is_jxr(data))
     }
 }

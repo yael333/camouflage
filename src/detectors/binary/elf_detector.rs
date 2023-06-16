@@ -5,7 +5,7 @@ use infer;
 pub struct ElfDetector;
 
 impl Detector for ElfDetector {
-    fn detect(&self, data: &[u8]) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::app::is_elf(data))
     }
 }

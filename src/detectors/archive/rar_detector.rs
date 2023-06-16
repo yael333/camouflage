@@ -5,7 +5,7 @@ use infer;
 pub struct RarDetector;
 
 impl Detector for RarDetector {
-    fn detect(&self, data: &[u8]) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::archive::is_rar(data))
     }
 }

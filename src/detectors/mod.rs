@@ -23,7 +23,7 @@ pub use self::video::*;
 use std::error::Error;
 
 pub trait Detector {
-    fn detect(&self, data: &[u8]) -> Result<bool, Box<dyn Error>>;
+    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>>;
 }
 
 // Function to return a list of all available detectors
