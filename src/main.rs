@@ -1,11 +1,12 @@
+mod formats;
+
 use std::error::Error;
 use std::fs;
 use prettytable::{Table, Row, Cell};
 use prettytable::row;
 use structopt::StructOpt;
-use crate::detectors::{Detector, get_available_detectors};
+use crate::formats::{Detector, Validator, get_available_detectors};
 
-mod detectors;
 
 #[derive(Debug, StructOpt)]
 #[structopt(name = "polyglot-detector", about = "Detects polyglot file formats.")]
@@ -33,7 +34,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     for (detector, format) in detectors {
         let is_format = detector.detect(&data, &opt.file_path)?;
-        if opt.all || is_format {
+        let is_valid  = detector.validate(&data, &opt.file_path)?;
+
+        if opt.all || (is_format && is_valid) {
             table.add_row(Row::new(vec![
                 Cell::new(format),
                 Cell::new(if is_format { "✓" } else { "x" }),
