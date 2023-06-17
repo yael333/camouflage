@@ -6,7 +6,7 @@ use infer;
 pub struct Ogg_opusFormat;
 
 impl Detector for Ogg_opusFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::audio::is_ogg_opus(data))
     }
 }

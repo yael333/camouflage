@@ -1,7 +1,7 @@
 use crate::formats::Detector;
 use crate::formats::Validator;
 use std::error::Error;
-use infer;
+
 
 pub struct HtmlFormat;
 

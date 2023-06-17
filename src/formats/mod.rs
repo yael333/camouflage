@@ -29,7 +29,7 @@ pub trait Detector {
 }
 
 pub trait Validator {
-    fn validate(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn validate(&self, _data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(true)
     }
 }

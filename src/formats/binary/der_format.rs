@@ -6,7 +6,7 @@ use infer;
 pub struct DerFormat;
 
 impl Detector for DerFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::app::is_der(data))
     }
 }

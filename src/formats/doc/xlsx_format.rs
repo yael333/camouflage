@@ -6,7 +6,7 @@ use infer;
 pub struct XlsxFormat;
 
 impl Detector for XlsxFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::doc::is_xlsx(data))
     }
 }

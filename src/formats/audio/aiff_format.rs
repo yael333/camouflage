@@ -6,7 +6,7 @@ use infer;
 pub struct AiffFormat;
 
 impl Detector for AiffFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::audio::is_aiff(data))
     }
 }

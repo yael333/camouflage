@@ -6,7 +6,7 @@ use infer;
 pub struct Cr2Format;
 
 impl Detector for Cr2Format {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::image::is_cr2(data))
     }
 }

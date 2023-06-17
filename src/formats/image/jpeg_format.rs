@@ -6,7 +6,7 @@ use infer;
 pub struct JpegFormat;
 
 impl Detector for JpegFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::image::is_jpeg(data))
     }
 }

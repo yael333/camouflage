@@ -6,7 +6,7 @@ use infer;
 pub struct MpegFormat;
 
 impl Detector for MpegFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::video::is_mpeg(data))
     }
 }

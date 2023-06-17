@@ -6,7 +6,7 @@ use infer;
 pub struct XmlFormat;
 
 impl Detector for XmlFormat {
-    fn detect(&self, data: &[u8], file_path: &str) -> Result<bool, Box<dyn Error>> {
+    fn detect(&self, data: &[u8], _file_path: &str) -> Result<bool, Box<dyn Error>> {
         Ok(infer::text::is_xml(data))
     }
 }
