@@ -11,7 +11,6 @@ mod exe_format;
 mod java_format;
 mod llvm_format;
 mod mach_format;
-mod nes_format;
 mod pem_format;
 mod wasm_format;
 
@@ -28,6 +27,5 @@ pub use self::exe_format::ExeFormat;
 pub use self::java_format::JavaFormat;
 pub use self::llvm_format::LlvmFormat;
 pub use self::mach_format::MachFormat;
-pub use self::nes_format::NesFormat;
 pub use self::pem_format::PemFormat;
 pub use self::wasm_format::WasmFormat;

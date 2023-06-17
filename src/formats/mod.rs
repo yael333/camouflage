@@ -7,6 +7,7 @@ mod font;
 mod image;
 mod markup;
 mod odf;
+mod rom;
 mod video;
 
 pub use self::archive::*;
@@ -18,6 +19,7 @@ pub use self::font::*;
 pub use self::image::*;
 pub use self::markup::*;
 pub use self::odf::*;
+pub use self::rom::*;
 pub use self::video::*;
 
 use std::error::Error;
@@ -94,7 +96,6 @@ pub fn get_available_detectors() -> Vec<(Box<dyn DetectorValidator + 'static>, &
         (Box::new(JavaFormat), "JAVA"),
         (Box::new(LlvmFormat), "LLVM"),
         (Box::new(MachFormat), "MACH"),
-        (Box::new(NesFormat), "NES"),
         (Box::new(PemFormat), "PEM"),
         (Box::new(WasmFormat), "WASM"),
 
@@ -141,6 +142,10 @@ pub fn get_available_detectors() -> Vec<(Box<dyn DetectorValidator + 'static>, &
         (Box::new(OdpFormat), "ODP"),
         (Box::new(OdsFormat), "ODS"),
         (Box::new(OdtFormat), "ODT"),
+
+        // ROM
+        (Box::new(NesFormat), "NES"),
+        (Box::new(GbFormat), "GB"),
 
         // Video
         (Box::new(AviFormat), "AVI"),
